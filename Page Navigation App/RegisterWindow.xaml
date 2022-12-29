@@ -1,0 +1,73 @@
+﻿<Window x:Class="Page_Navigation_App.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Page_Navigation_App"
+        xmlns:vm="clr-namespace:Page_Navigation_App.ViewModel"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Register"
+        Height="420" Width="400"
+        Background="#212529">
+    <Window.DataContext>
+        <vm:RegisterVM/>
+    </Window.DataContext>
+    <Grid Margin="30, 10, 30, 10">
+        <StackPanel>
+            <TextBlock Text="Register" FontSize="26"
+                       HorizontalAlignment="Center"
+                       FontFamily="/Fonts/#Rubik Bold"
+                       Foreground="#fff"
+                       Margin="0,0,0,20"/>
+            <TextBlock Text="Name" FontSize="16"
+                       FontFamily="/Fonts/#Rubik Regular"
+                       Foreground="#fff"
+                       Margin="0,0,0,5"/>
+            <TextBox Text="{Binding Name, Mode=TwoWay}"
+                     Foreground="#fff"
+                     FontSize="16"
+                     Margin="0,0,0,15"
+                     FontFamily="/Fonts/#Rubik Regular"/>
+            <TextBlock Text="Email" FontSize="16"
+                       FontFamily="/Fonts/#Rubik Regular"
+                       Foreground="#fff"
+                       Margin="0,0,0,5"/>
+            <TextBox Text="{Binding Email, Mode=TwoWay}"
+                     Foreground="#fff"
+                     FontSize="16"
+                     Margin="0,0,0,15"
+                     FontFamily="/Fonts/#Rubik Regular"/>
+            
+            <TextBlock Text="Password" FontSize="16"
+                       FontFamily="/Fonts/#Rubik Regular"
+                       Foreground="#fff" 
+                       Margin="0,0,0,5"
+                       />
+            <PasswordBox x:Name="passwordBox" PasswordChanged="passwordBox_PasswordChanged" 
+                         FontSize="16"
+                         Foreground="#fff"
+                         Margin="0,0,0,20"
+                     FontFamily="/Fonts/#Rubik Regular"/>
+            <Button Content="Sign Up"
+                    Foreground="#fff"
+                    Margin="0,0,0,5"
+                    Command="{Binding RegisterCommand}"/>
+            <TextBlock Text="{Binding ErrorMessage}" FontSize="14"
+                       FontFamily="/Fonts/#Rubik Regular"
+                       Foreground="Red" 
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,5"
+                       />
+            <Button
+                Content="Login"
+                Background="Transparent"
+                BorderThickness="0"
+                FontFamily="/Fonts/#Rubik Regular"
+                Foreground="#fff"
+                FontSize="14"
+                Command="{Binding LoginCommand}" Width="103"
+                />
+        </StackPanel>
+    </Grid>
+</Window>

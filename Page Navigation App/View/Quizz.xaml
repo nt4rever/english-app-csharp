@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="Page_Navigation_App.View.Quizz"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Page_Navigation_App.View"
+             xmlns:vm="clr-namespace:Page_Navigation_App.ViewModel"
+             mc:Ignorable="d"
+             Style="{StaticResource Page_Style}"
+             d:DesignHeight="600"
+             d:DesignWidth="622">
+    <UserControl.DataContext>
+        <vm:QuizzVM/>
+    </UserControl.DataContext>
+
+    <Grid>
+
+        <Border CornerRadius="0,20,20,0" Margin="0,5,5,0">
+
+            <Image Source="/Images/quizz_page.png"
+                   Stretch="Fill" />
+
+        </Border>
+        <Grid Margin="74,136,74,84">
+            <ComboBox Margin="146,120,146,0" VerticalAlignment="Top"
+                      ItemsSource="{Binding Options}"
+                      DisplayMemberPath="Value"
+                      SelectedValuePath="Key"
+                      SelectedValue="{Binding SelectedOptionKey}"
+                      Foreground="#fff"
+                      FontSize="14"
+                      FontFamily="/Fonts/#Rubik Regular"
+                      Visibility="{Binding IsButtonLoad}"
+                      />
+            <ProgressBar IsIndeterminate="{Binding IsLoading}" Visibility="{Binding IsButtonLoad}" Margin="146,188,146,188"/>
+            <Button Content="Start Quizz" Visibility="{Binding IsButtonLoad}" Margin="146,153,146,195" Command="{Binding RefreshCommand}"/>
+            <StackPanel Margin="0,0,10,0" Visibility="{Binding IsQuizz}">
+                <TextBlock Text="{Binding CurrentQuestion.Text}" Foreground="#fff"  FontSize="18"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontFamily="/Fonts/#Rubik Regular"
+                           Margin="0,0,0,10" TextWrapping="Wrap"/>
+                <ListBox ItemsSource="{Binding Answers}" SelectedItem="{Binding SelectedAnswer, Mode=TwoWay}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" FontSize="18" FontFamily="/Fonts/#Rubik Regular" />
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <StackPanel Margin="0,10,0,0" Orientation="Horizontal" HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            >
+                    <Button Content="Submit" Margin="0,0,5,0"  Command="{Binding SubmitAnswerCommand}" />
+                    <Button Content="Next" Margin="5,0,0,0" Command="{Binding NextQuestionCommand}" />
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <Grid Margin="136,415,127,84">
+            <Popup x:Name="myPopup"
+              Placement="Center" 
+              AllowsTransparency="True"
+              IsOpen="{Binding OpenPopup}">
+                <Border Background="#EFF5F5"
+                    BorderThickness="0" CornerRadius="15" Padding="30, 10, 30 ,10">
+                    <StackPanel>
+                        <TextBlock Text="{Binding TextPopup}"
+                           FontSize="20"
+                           Foreground="{Binding ColorPopup}" Margin="0,0,0,15" />
+                        <Button Content="Close" Width="50" Height="25" FontSize="12" Padding="0"
+                               Command="{Binding ClosePopupCommand}" 
+                        />
+                        
+                    </StackPanel>
+                </Border>
+            </Popup>
+        </Grid>
+
+    </Grid>
+</UserControl>

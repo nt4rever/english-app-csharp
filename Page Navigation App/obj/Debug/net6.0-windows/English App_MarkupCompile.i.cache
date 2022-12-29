@@ -1,0 +1,20 @@
+﻿English App
+1.0.0.0
+
+winexe
+C#
+.cs
+D:\VS\Final\EnglishApp\Page Navigation App\obj\Debug\net6.0-windows\
+Page_Navigation_App
+none
+false
+TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+D:\VS\Final\EnglishApp\Page Navigation App\App.xaml
+131858495681
+191795031175
+29-356383202
+223982815097
+LoginWindow.xaml;MainWindow.xaml;RegisterWindow.xaml;Styles\Button.xaml;Styles\ComboBox.xaml;Styles\Image.xaml;Styles\Page.xaml;Styles\Text.xaml;Utilities\DataTemplate.xaml;View\Grammar.xaml;View\Home.xaml;View\Quizz.xaml;View\Translate.xaml;
+
+False
+
