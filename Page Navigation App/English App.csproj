@@ -1,111 +1,116 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <RootNamespace>Page_Navigation_App</RootNamespace>
-    <Nullable>disable</Nullable>
-    <UseWPF>true</UseWPF>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<RootNamespace>Page_Navigation_App</RootNamespace>
+		<Nullable>disable</Nullable>
+		<UseWPF>true</UseWPF>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Fonts\Rubik-Medium.ttf" />
-    <None Remove="Fonts\Rubik-Regular.ttf" />
-    <None Remove="Images\customer_page.png" />
-    <None Remove="Images\home_page.png" />
-    <None Remove="Images\img_customer.png" />
-    <None Remove="Images\img_home.png" />
-    <None Remove="Images\img_order.png" />
-    <None Remove="Images\img_product.png" />
-    <None Remove="Images\img_setting.png" />
-    <None Remove="Images\img_shipment.png" />
-    <None Remove="Images\img_transaction.png" />
-    <None Remove="Images\order_page.png" />
-    <None Remove="Images\product_page.png" />
-    <None Remove="Images\setting_page.png" />
-    <None Remove="Images\shipment_page.png" />
-    <None Remove="Images\shutdown_def.png" />
-    <None Remove="Images\shutdown_mo.png" />
-    <None Remove="Images\transaction_page.png" />
-	<None Remove="Images\translate_page.png" />
-	<None Remove="Images\grammar_page.png" />
-	<None Remove="Images\quizz_page.png" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Remove="Fonts\Rubik-Medium.ttf" />
+		<None Remove="Fonts\Rubik-Regular.ttf" />
+		<None Remove="Images\customer_page.png" />
+		<None Remove="Images\home_page.png" />
+		<None Remove="Images\img_customer.png" />
+		<None Remove="Images\img_home.png" />
+		<None Remove="Images\img_order.png" />
+		<None Remove="Images\img_product.png" />
+		<None Remove="Images\img_setting.png" />
+		<None Remove="Images\img_shipment.png" />
+		<None Remove="Images\img_transaction.png" />
+		<None Remove="Images\order_page.png" />
+		<None Remove="Images\product_page.png" />
+		<None Remove="Images\setting_page.png" />
+		<None Remove="Images\shipment_page.png" />
+		<None Remove="Images\shutdown_def.png" />
+		<None Remove="Images\shutdown_mo.png" />
+		<None Remove="Images\transaction_page.png" />
+		<None Remove="Images\translate_page.png" />
+		<None Remove="Images\grammar_page.png" />
+		<None Remove="Images\quizz_page.png" />
+		<None Remove="Images\myvocab_page.png" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Resource Include="Fonts\Rubik-Medium.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Fonts\Rubik-Regular.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Content Include="Images\customer_page.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\home_page.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\img_customer.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\img_home.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\img_order.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\img_product.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\img_setting.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\img_shipment.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\img_transaction.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\order_page.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\product_page.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\setting_page.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\shipment_page.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\shutdown_def.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\shutdown_mo.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\transaction_page.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-	<Content Include="Images\translate_page.png">
-		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	</Content>
-	  <Content Include="Images\grammar_page.png">
-		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
-	  <Content Include="Images\quizz_page.png">
-		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
-  </ItemGroup>
+	<ItemGroup>
+		<Resource Include="Fonts\Rubik-Medium.ttf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Fonts\Rubik-Regular.ttf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Content Include="Images\customer_page.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Images\home_page.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Images\img_customer.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Images\img_home.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Images\img_order.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Images\img_product.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Images\img_setting.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Images\img_shipment.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Images\img_transaction.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Images\order_page.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Images\product_page.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Images\setting_page.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Images\shipment_page.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Images\shutdown_def.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Images\shutdown_mo.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Images\transaction_page.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Images\translate_page.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Images\grammar_page.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Images\quizz_page.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Images\myvocab_page.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Dapper" Version="2.0.123" />
-    <PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="7.0.1" />
-    <PackageReference Include="MySql.Data" Version="8.0.31" />
-    <PackageReference Include="NAudio" Version="2.1.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
-    <PackageReference Include="System.Speech" Version="7.0.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Dapper" Version="2.0.123" />
+		<PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="7.0.1" />
+		<PackageReference Include="MySql.Data" Version="8.0.31" />
+		<PackageReference Include="NAudio" Version="2.1.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+		<PackageReference Include="Prism.Wpf" Version="8.1.97" />
+		<PackageReference Include="System.Speech" Version="7.0.0" />
+	</ItemGroup>
 </Project>

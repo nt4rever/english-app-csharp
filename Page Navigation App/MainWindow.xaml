@@ -1,6 +1,4 @@
-﻿
-
-<Window x:Class="Page_Navigation_App.MainWindow"
+﻿<Window x:Class="Page_Navigation_App.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -44,9 +42,16 @@
                 <Border Background="#272B2F"
                         CornerRadius="20,0,0,20" />
 
-                <StackPanel Height="400"
+
+                <StackPanel Height="500"
                             Width="228">
 
+                    <TextBlock Text="{Binding UserName}"
+                               FontSize="25"
+                               Foreground="#fff"
+                               Margin="0,0,0,10"
+                               FontFamily="/Fonts/#Rubik Bold"
+                               HorizontalAlignment="Center" />
                     <!--// Home //-->
 
                     <Menu:Btn Style="{StaticResource BtnStyle}"
@@ -116,7 +121,22 @@
 
                     </Menu:Btn>
 
-                   
+                    <Menu:Btn Style="{StaticResource BtnStyle}"
+                              Command="{Binding MyVocabCommand}">
+
+                        <Grid>
+
+                            <Image Source="Images/img_order.png"
+                                   Style="{StaticResource Image_Style}" />
+
+                            <TextBlock Text="My vocab"
+                                       Style="{StaticResource Text_Style}" />
+
+                        </Grid>
+
+                    </Menu:Btn>
+
+
                 </StackPanel>
 
             </Grid>

@@ -17,23 +17,32 @@ namespace Page_Navigation_App.ViewModel
             set { _currentView = value; OnPropertyChanged(); }
         }
 
+        private string _userName = "Hi You";
+        public string UserName { get { return _userName; } set { _userName = value; OnPropertyChanged(); } }
         public ICommand HomeCommand { get; set; }
         public ICommand TranslateCommand { get; set; }
         public ICommand GrammarCommand { get; set; }
         public ICommand QuizzCommand { get; set; }
+        public ICommand MyVocabCommand { get; set; }
 
         private void Home(object obj) => CurrentView = new HomeVM();
         private void Translate(object obj) => CurrentView = new TranslateVM();
         private void Grammar(object obj) => CurrentView = new GrammarVM();
         private void Quizz(object obj) => CurrentView = new QuizzVM();
+        private void MyVocab(object obj) => CurrentView = new MyVocabVM();
         public NavigationVM()
         {
             HomeCommand = new RelayCommand(Home);
             TranslateCommand = new RelayCommand(Translate);
             GrammarCommand = new RelayCommand(Grammar);
             QuizzCommand = new RelayCommand(Quizz);
+            MyVocabCommand = new RelayCommand(MyVocab);
             // Startup Page
             CurrentView = new HomeVM();
+            if (StaticData.Instance.User != null)
+            {
+                UserName = $"Hi {StaticData.Instance.User.Name}";
+            }
         }
     }
 }

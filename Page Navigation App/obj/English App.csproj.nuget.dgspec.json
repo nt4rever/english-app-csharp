@@ -64,6 +64,10 @@
               "target": "Package",
               "version": "[13.0.2, )"
             },
+            "Prism.Wpf": {
+              "target": "Package",
+              "version": "[8.1.97, )"
+            },
             "System.Speech": {
               "target": "Package",
               "version": "[7.0.0, )"

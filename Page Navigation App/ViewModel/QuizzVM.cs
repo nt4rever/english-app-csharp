@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace Page_Navigation_App.ViewModel
 {
-    class QuizzVM : Utilities.ViewModelBase
+    class QuizzVM : ViewModelBase
     {
         readonly MySqlConnector dataConnector;
         private QuizQuestion[] _questions = {
@@ -144,6 +144,7 @@ namespace Page_Navigation_App.ViewModel
 
         private void NextQuestion(object obj)
         {
+            OpenPopup = false;
             _currentQuestionIndex++;
             if (_currentQuestionIndex == _questions.Length)
             {
@@ -160,7 +161,7 @@ namespace Page_Navigation_App.ViewModel
                 OpenPopup = true;
                 _score = 0;
             }
-                
+
             OnPropertyChanged(nameof(CurrentQuestion));
             OnPropertyChanged(nameof(Answers));
             SelectedAnswer = null;

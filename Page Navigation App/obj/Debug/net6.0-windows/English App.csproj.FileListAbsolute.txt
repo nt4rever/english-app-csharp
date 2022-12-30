@@ -82,3 +82,9 @@ D:\VS\Final\EnglishApp\Page Navigation App\obj\Debug\net6.0-windows\RegisterWind
 D:\VS\Final\EnglishApp\Page Navigation App\obj\Debug\net6.0-windows\RegisterWindow.baml
 D:\VS\Final\EnglishApp\Page Navigation App\bin\Debug\net6.0-windows\Microsoft.AspNetCore.Cryptography.Internal.dll
 D:\VS\Final\EnglishApp\Page Navigation App\bin\Debug\net6.0-windows\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\VS\Final\EnglishApp\Page Navigation App\bin\Debug\net6.0-windows\Images\myvocab_page.png
+D:\VS\Final\EnglishApp\Page Navigation App\obj\Debug\net6.0-windows\View\MyVocab.g.cs
+D:\VS\Final\EnglishApp\Page Navigation App\obj\Debug\net6.0-windows\View\MyVocab.baml
+D:\VS\Final\EnglishApp\Page Navigation App\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
+D:\VS\Final\EnglishApp\Page Navigation App\bin\Debug\net6.0-windows\Prism.dll
+D:\VS\Final\EnglishApp\Page Navigation App\bin\Debug\net6.0-windows\Prism.Wpf.dll

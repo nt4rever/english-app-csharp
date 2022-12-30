@@ -8,8 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using User = Page_Navigation_App.DataAccess.Model.User;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
-using Microsoft.VisualBasic.ApplicationServices;
-using static System.Formats.Asn1.AsnWriter;
+using System.Windows;
 
 namespace Page_Navigation_App.DataAccess
 {
@@ -109,6 +108,40 @@ namespace Page_Navigation_App.DataAccess
             }
             catch
             {
+                return false;
+            }
+        }
+
+        public List<Vocab> GetVocabs()
+        {
+            try
+            {
+                using var connection = new MySqlConnection(Constr);
+                connection.Open();
+                var vocab = connection.Query<Vocab>("SELECT * FROM vocabularies");
+                return vocab.ToList();
+            }
+            catch
+            {
+                return new List<Vocab>();
+            }
+        }
+
+        public bool InsertVocab(Vocab vo)
+        {
+            try
+            {
+                using var connection = new MySqlConnection(Constr);
+                connection.Open();
+                var rowsAffected = connection.Execute(
+                   "INSERT INTO vocabularies (name, type, meaning, note, user_id) VALUES (@Name, @Type, @Meaning, @Note, @UserId)",
+                   vo
+                 );
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
                 return false;
             }
         }

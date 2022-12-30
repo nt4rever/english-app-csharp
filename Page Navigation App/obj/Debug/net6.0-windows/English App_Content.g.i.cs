@@ -27,5 +27,6 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/translate_page.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/grammar_page.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/quizz_page.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/myvocab_page.png")]
 
 
