@@ -21,4 +21,7 @@
     <DataTemplate DataType="{x:Type vm:MyVocabVM}">
         <view:MyVocab />
     </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:LearnVM}">
+        <view:Learn />
+    </DataTemplate>
 </ResourceDictionary>

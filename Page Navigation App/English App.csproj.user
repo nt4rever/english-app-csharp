@@ -19,6 +19,9 @@
     <Compile Update="LoginWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\Learn.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\MyVocab.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -61,6 +64,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Learn.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\MyVocab.xaml">

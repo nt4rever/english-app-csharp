@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\VS\Final\EnglishApp\Page Navigation App\App.xaml
-141984944208
-20-1715040959
-30-94777695
+15-1597916094
+21-301153444
+32-883969461
 226-651120526
-LoginWindow.xaml;MainWindow.xaml;RegisterWindow.xaml;Styles\Button.xaml;Styles\ComboBox.xaml;Styles\Image.xaml;Styles\Page.xaml;Styles\Text.xaml;Utilities\DataTemplate.xaml;View\Grammar.xaml;View\Home.xaml;View\MyVocab.xaml;View\Quizz.xaml;View\Translate.xaml;
+LoginWindow.xaml;MainWindow.xaml;RegisterWindow.xaml;Styles\Button.xaml;Styles\ComboBox.xaml;Styles\Image.xaml;Styles\Page.xaml;Styles\Text.xaml;Utilities\DataTemplate.xaml;View\Grammar.xaml;View\Home.xaml;View\Learn.xaml;View\MyVocab.xaml;View\Quizz.xaml;View\Translate.xaml;
 
 False
 

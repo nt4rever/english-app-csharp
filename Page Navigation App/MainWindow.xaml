@@ -135,6 +135,20 @@
                         </Grid>
 
                     </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle}"
+                              Command="{Binding LearnCommand}">
+
+                        <Grid>
+
+                            <Image Source="Images/img_order.png"
+                                   Style="{StaticResource Image_Style}" />
+
+                            <TextBlock Text="Learn vocab"
+                                       Style="{StaticResource Text_Style}" />
+
+                        </Grid>
+
+                    </Menu:Btn>
 
 
                 </StackPanel>

@@ -24,12 +24,14 @@ namespace Page_Navigation_App.ViewModel
         public ICommand GrammarCommand { get; set; }
         public ICommand QuizzCommand { get; set; }
         public ICommand MyVocabCommand { get; set; }
+        public ICommand LearnCommand { get; set; }
 
         private void Home(object obj) => CurrentView = new HomeVM();
         private void Translate(object obj) => CurrentView = new TranslateVM();
         private void Grammar(object obj) => CurrentView = new GrammarVM();
         private void Quizz(object obj) => CurrentView = new QuizzVM();
         private void MyVocab(object obj) => CurrentView = new MyVocabVM();
+        private void Learn(object obj) => CurrentView = new LearnVM();
         public NavigationVM()
         {
             HomeCommand = new RelayCommand(Home);
@@ -37,6 +39,7 @@ namespace Page_Navigation_App.ViewModel
             GrammarCommand = new RelayCommand(Grammar);
             QuizzCommand = new RelayCommand(Quizz);
             MyVocabCommand = new RelayCommand(MyVocab);
+            LearnCommand = new RelayCommand(Learn);
             // Startup Page
             CurrentView = new HomeVM();
             if (StaticData.Instance.User != null)

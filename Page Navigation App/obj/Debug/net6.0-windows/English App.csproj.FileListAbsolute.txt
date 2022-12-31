@@ -88,3 +88,6 @@ D:\VS\Final\EnglishApp\Page Navigation App\obj\Debug\net6.0-windows\View\MyVocab
 D:\VS\Final\EnglishApp\Page Navigation App\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
 D:\VS\Final\EnglishApp\Page Navigation App\bin\Debug\net6.0-windows\Prism.dll
 D:\VS\Final\EnglishApp\Page Navigation App\bin\Debug\net6.0-windows\Prism.Wpf.dll
+D:\VS\Final\EnglishApp\Page Navigation App\bin\Debug\net6.0-windows\Images\learn_page.png
+D:\VS\Final\EnglishApp\Page Navigation App\obj\Debug\net6.0-windows\View\Learn.g.cs
+D:\VS\Final\EnglishApp\Page Navigation App\obj\Debug\net6.0-windows\View\Learn.baml

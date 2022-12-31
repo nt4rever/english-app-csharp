@@ -179,6 +179,22 @@ namespace Page_Navigation_App.DataAccess
             }
         }
 
+        public List<Vocab> GetVocabsForLearn(int num)
+        {
+            try
+            {
+                using var connection = new MySqlConnection(Constr);
+                connection.Open();
+                var vocab = connection.Query<Vocab>("SELECT * FROM vocabularies ORDER BY RAND() LIMIT @Num"
+                    , new { Num = num });
+                return vocab.ToList();
+            }
+            catch
+            {
+                return new List<Vocab>();
+            }
+        }
+
         private static byte[] GetStoredSalt()
         {
             // Replace this with your own code to retrieve the stored salt from your database or other storage location
