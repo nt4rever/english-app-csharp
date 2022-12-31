@@ -1,4 +1,5 @@
-﻿using Page_Navigation_App.DataAccess;
+﻿using Page_Navigation_App.Api;
+using Page_Navigation_App.DataAccess;
 using Page_Navigation_App.DataAccess.Model;
 using Page_Navigation_App.Utilities;
 using System;
@@ -16,6 +17,7 @@ namespace Page_Navigation_App.ViewModel
     class LearnVM : ViewModelBase
     {
         private MySqlConnector dataConnector;
+        private GoogleTranslate googleTranslate;
         private List<Vocab> _vocabs;
         public ObservableCollection<KeyValuePair<int, string>> NumberOptions { get; set; }
         public int SelectedNumberOptionKey { get; set; }
@@ -51,11 +53,21 @@ namespace Page_Navigation_App.ViewModel
                 OnPropertyChanged();
             }
         }
+        private string _colorMessage = "#FF0DFF6A";
+        public string ColorMessage { 
+            get => _colorMessage;
+            set
+                {
+                    _colorMessage = value;
+                    OnPropertyChanged();
+                }
+        }
         private Vocab _currentVocab = null;
         private int _currentVocabIndex = -1;
         public ICommand StartCommand { get; set; }
         public ICommand NextCommand { get; set; }
         public ICommand CheckCommand { get; set; }
+        public ICommand SpellCommand { get; set; }
         public LearnVM()
         {
             NumberOptions = new ObservableCollection<KeyValuePair<int, string>>
@@ -74,6 +86,8 @@ namespace Page_Navigation_App.ViewModel
             StartCommand = new RelayCommand(StartAction);
             NextCommand = new RelayCommand(NextAction, CanNextAction);
             CheckCommand = new RelayCommand(CheckAction, CanCheckAction);
+            SpellCommand = new RelayCommand(SpellAction);
+            googleTranslate = new();
             dataConnector = new();
         }
 
@@ -127,17 +141,33 @@ namespace Page_Navigation_App.ViewModel
             return _currentVocab != null;
         }
 
+        private void SpellAction(object obj)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(English)) {
+                    googleTranslate.PlayMp3FromUrl("https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=" + Uri.EscapeUriString(English) + "&tl=en&total=1&idx=0");
+                }
+            } catch
+            {
+
+            }
+
+        }
+
         private void CheckAnswer(string input, string key)
         {
-            string i = input.Trim().ToLower();
-            string k = key.Trim().ToLower();
+            string i = TextProcess.RemoveUnicode(input.Trim().ToLower());
+            string k = TextProcess.RemoveUnicode(key.Trim().ToLower());
             if (i == k)
             {
                 Message = "Correct";
+                ColorMessage = "#FF0DFF6A";
             }
             else
             {
                 Message = "Incorrect";
+                ColorMessage = "red";
             }
         }
         private void SetupVocabTest()

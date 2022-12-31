@@ -34,7 +34,8 @@
                         BorderBrush="{x:Null}"
                         Foreground="{x:Null}"
                         Canvas.Left="13"
-                        Canvas.Top="159">
+                        Canvas.Top="159"
+                        Command="{Binding SpellCommand}">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius"
@@ -109,7 +110,7 @@
                             Canvas.Top="10"
                             Canvas.Left="190">
                     <TextBlock Text="{Binding Message}"
-                               Foreground="Yellow"
+                               Foreground="{Binding ColorMessage}"
                                FontSize="18"
                                FontWeight="SemiBold"
                                HorizontalAlignment="Center"

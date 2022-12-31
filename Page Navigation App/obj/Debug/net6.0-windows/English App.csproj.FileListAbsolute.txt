@@ -91,3 +91,96 @@ D:\VS\Final\EnglishApp\Page Navigation App\bin\Debug\net6.0-windows\Prism.Wpf.dl
 D:\VS\Final\EnglishApp\Page Navigation App\bin\Debug\net6.0-windows\Images\learn_page.png
 D:\VS\Final\EnglishApp\Page Navigation App\obj\Debug\net6.0-windows\View\Learn.g.cs
 D:\VS\Final\EnglishApp\Page Navigation App\obj\Debug\net6.0-windows\View\Learn.baml
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\English App.exe
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Images\customer_page.png
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Images\home_page.png
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Images\img_customer.png
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Images\img_home.png
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Images\img_order.png
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Images\img_product.png
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Images\img_setting.png
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Images\img_shipment.png
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Images\img_transaction.png
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Images\order_page.png
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Images\product_page.png
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Images\setting_page.png
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Images\shipment_page.png
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Images\shutdown_def.png
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Images\shutdown_mo.png
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Images\transaction_page.png
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Images\translate_page.png
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Images\grammar_page.png
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Images\quizz_page.png
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Images\myvocab_page.png
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Images\learn_page.png
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\English App.deps.json
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\English App.runtimeconfig.json
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\English App.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\English App.pdb
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Dapper.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Google.Protobuf.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\K4os.Compression.LZ4.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\K4os.Compression.LZ4.Streams.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\K4os.Hash.xxHash.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\MaterialDesignColors.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\MySql.Data.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\ZstdNet.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\NAudio.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\NAudio.Asio.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\NAudio.Core.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\NAudio.Midi.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\NAudio.Wasapi.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\NAudio.WinForms.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\NAudio.WinMM.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Prism.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\Prism.Wpf.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\System.Speech.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Speech.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\English App.csproj.AssemblyReference.cache
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\Styles\Button.baml
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\Styles\ComboBox.baml
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\Styles\Image.baml
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\Styles\Page.baml
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\Styles\Text.baml
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\LoginWindow.g.cs
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\MainWindow.g.cs
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\RegisterWindow.g.cs
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\View\Grammar.g.cs
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\View\Home.g.cs
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\View\Learn.g.cs
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\View\MyVocab.g.cs
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\View\Quizz.g.cs
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\View\Translate.g.cs
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\App.g.cs
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\English App_Content.g.cs
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\English App_MarkupCompile.cache
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\English App_MarkupCompile.lref
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\App.baml
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\LoginWindow.baml
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\MainWindow.baml
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\RegisterWindow.baml
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\Utilities\DataTemplate.baml
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\View\Grammar.baml
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\View\Home.baml
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\View\Learn.baml
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\View\MyVocab.baml
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\View\Quizz.baml
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\View\Translate.baml
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\English App.g.resources
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\English App.GeneratedMSBuildEditorConfig.editorconfig
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\English App.AssemblyInfoInputs.cache
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\English App.AssemblyInfo.cs
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\English App.csproj.CoreCompileInputs.cache
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\English App.csproj.CopyComplete
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\English App.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\refint\English App.dll
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\English App.pdb
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\English App.genruntimeconfig.cache
+E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\ref\English App.dll
