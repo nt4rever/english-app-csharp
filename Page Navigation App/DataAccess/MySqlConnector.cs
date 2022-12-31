@@ -118,7 +118,7 @@ namespace Page_Navigation_App.DataAccess
             {
                 using var connection = new MySqlConnection(Constr);
                 connection.Open();
-                var vocab = connection.Query<Vocab>("SELECT * FROM vocabularies");
+                var vocab = connection.Query<Vocab>("SELECT * FROM vocabularies ORDER BY id DESC");
                 return vocab.ToList();
             }
             catch
@@ -142,6 +142,39 @@ namespace Page_Navigation_App.DataAccess
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        public bool DeleteVocab(Vocab vo)
+        {
+            try
+            {
+                using var connection = new MySqlConnection(Constr);
+                connection.Open();
+                connection.Execute("DELETE FROM vocabularies WHERE id = @Id", new
+                {
+                    vo.Id
+                });
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateVocab(Vocab vo)
+        {
+            try
+            {
+                using var connection = new MySqlConnection(Constr);
+                connection.Open();
+                connection.Execute("UPDATE vocabularies SET name = @Name, type = @Type, meaning = @Meaning, note = @Note WHERE id = @Id", vo);
+                return true;
+            }
+            catch
+            {
                 return false;
             }
         }

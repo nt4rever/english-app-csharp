@@ -70,10 +70,16 @@ namespace Page_Navigation_App.ViewModel
         }
         public Vocab SelectedVocab { get; set; }
         public ICommand AddCommand { get; set; }
+        public ICommand DeleteCommand { get; set; }
+        public ICommand UpdateCommand { get; set; }
+        public ICommand ClearCommand { get; set; }
         public MyVocabVM()
         {
             dataConnector = new();
             AddCommand = new RelayCommand(AddAction, CanAddAction);
+            DeleteCommand = new RelayCommand(DeleteAction, CanDeleteAction);
+            UpdateCommand = new RelayCommand(UpdateAction, CanUpdateAction);
+            ClearCommand = new RelayCommand(ClearFrom, CanDeleteAction);
             LoadData();
         }
 
@@ -86,11 +92,34 @@ namespace Page_Navigation_App.ViewModel
                 Meaning = SelectedVocab.Meaning;
                 Note = SelectedVocab.Note;
             }
+            else
+            {
+                SelectedVocab = null;
+            }
         }
 
         private bool CanAddAction(object obj)
         {
             return !string.IsNullOrEmpty(Name) && !string.IsNullOrEmpty(Type) && !string.IsNullOrEmpty(Meaning);
+        }
+
+        private bool CanDeleteAction(object obj)
+        {
+            return SelectedVocab != null;
+        }
+
+        private bool CanUpdateAction(object obj)
+        {
+            return SelectedVocab != null && !string.IsNullOrEmpty(Name) && !string.IsNullOrEmpty(Type) && !string.IsNullOrEmpty(Meaning);
+        }
+
+        private void ClearFrom(object obj)
+        {
+            SelectedVocab = null;
+            Name = "";
+            Meaning = "";
+            Note = "";
+            Type = "";
         }
 
         private void AddAction(object obj)
@@ -114,6 +143,43 @@ namespace Page_Navigation_App.ViewModel
             b.RunWorkerAsync();
         }
 
+        private void DeleteAction(object obj)
+        {
+            if (SelectedVocab == null) return;
+            var b = new BackgroundWorker();
+            b.DoWork += (o, args) =>
+            {
+                dataConnector.DeleteVocab(SelectedVocab);
+            };
+            b.RunWorkerCompleted += (o, args) =>
+            {
+                LoadData();
+            };
+            b.RunWorkerAsync();
+        }
+
+        private void UpdateAction(object obj)
+        {
+            if (SelectedVocab == null) return;
+            var b = new BackgroundWorker();
+            b.DoWork += (o, args) =>
+            {
+                dataConnector.UpdateVocab(new Vocab
+                {
+                    Id = SelectedVocab.Id,
+                    Name = Name,
+                    Meaning = Meaning,
+                    Type = Type,
+                    Note = Note
+                });
+            };
+            b.RunWorkerCompleted += (o, args) =>
+            {
+                LoadData();
+            };
+            b.RunWorkerAsync();
+        }
+
         private void LoadData()
         {
             var b = new BackgroundWorker();
@@ -123,7 +189,11 @@ namespace Page_Navigation_App.ViewModel
             };
             b.RunWorkerCompleted += (o, args) =>
             {
-
+                SelectedVocab = null;
+                Name = "";
+                Meaning = "";
+                Note = "";
+                Type = "";
             };
             b.RunWorkerAsync();
         }

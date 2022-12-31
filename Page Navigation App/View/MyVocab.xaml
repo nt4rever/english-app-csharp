@@ -116,11 +116,17 @@
                              Text="{Binding Note}" />
                 </DockPanel>
                 <DockPanel HorizontalAlignment="Center">
+                    <Button Content="Clear"
+                            Width="80"
+                            Command="{Binding ClearCommand}" />
                     <Button Content="Delete"
-                            Width="80" />
+                            Width="80"
+                            Margin="10,0,0,0"
+                            Command="{Binding DeleteCommand}" />
                     <Button Content="Update"
                             Width="80"
-                            Margin="10,0,10,0" />
+                            Margin="10,0,10,0"
+                            Command="{Binding UpdateCommand}" />
                     <Button Content="Add"
                             Width="80"
                             Command="{Binding AddCommand}" />

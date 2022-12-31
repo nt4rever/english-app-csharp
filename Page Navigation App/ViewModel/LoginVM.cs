@@ -42,7 +42,7 @@ namespace Page_Navigation_App.ViewModel
         private string _errorMessage;
         public string ErrorMessage
         {
-            get => _errorMessage; 
+            get => _errorMessage;
             set
             {
                 _errorMessage = value;
@@ -58,6 +58,7 @@ namespace Page_Navigation_App.ViewModel
             mySqlConnector = new();
             LoginCommand = new RelayCommand(Login, CanLogin);
             RegisterCommand = new RelayCommand(Register);
+            Email = "tai@gmail.com";
         }
 
         private bool CanLogin(object obj)
