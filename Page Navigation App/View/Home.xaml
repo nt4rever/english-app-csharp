@@ -4,18 +4,71 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:Page_Navigation_App.View"
+             xmlns:vm="clr-namespace:Page_Navigation_App.ViewModel"
+             xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
              mc:Ignorable="d"
+             Style="{StaticResource Page_Style}"
              d:DesignHeight="600"
              d:DesignWidth="622">
 
+    <UserControl.DataContext>
+        <vm:HomeVM />
+    </UserControl.DataContext>
     <Grid>
 
-        <Border CornerRadius="0,20,20,0" Margin="0,5,5,0">
+        <Border CornerRadius="0,20,20,0"
+                Margin="0,5,5,0">
 
             <Image Source="/Images/home_page.png"
                    Stretch="Fill" />
 
         </Border>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <TextBlock Text="{Binding TextVocab}"
+                           Foreground="#fff"
+                           FontSize="24"
+                           Margin="133,126,338,136" />
+                <TextBlock Text="{Binding TextQuizz}"
+                           Foreground="#fff"
+                           FontSize="24"
+                           Margin="133,222,338,40" />
+                <Grid Margin="320,106,83,22">
+                    <TextBox Text="{Binding Name}"
+                             TextAlignment="Center"
+                             Foreground="#fff"
+                             FontSize="28"
+                             FontWeight="SemiBold"
+                             Margin="83,26,10,102" />
+                    <TextBox Text="{Binding Email}"
+                             Foreground="#fff"
+                             FontSize="16"
+                             Margin="16,94,10,47"
+                             IsReadOnly="True" />
+                    <PasswordBox Foreground="#fff"
+                                 FontSize="16"
+                                 Margin="16,131,121,10"
+                                 PasswordChanged="PasswordBox_PasswordChanged" />
+                    <Button Margin="110,133,10,7"
+                            Content="Edit"
+                            Command="{Binding EditCommand}" />
+                </Grid>
 
+            </Grid>
+            <Grid Grid.Row="1"
+                  Margin="67,10,70,46">
+                <lvc:CartesianChart Series="{Binding Series}"
+                                    XAxes="{Binding XAxes}"
+                                    YAxes="{Binding YAxes}"
+                                    LegendPosition="Right"
+                                    LegendBackgroundPaint="{Binding LedgendBackgroundPaint}"
+                                    LegendTextPaint="{Binding LegendTextPaint}">
+                </lvc:CartesianChart>
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>

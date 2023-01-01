@@ -55,6 +55,46 @@ namespace Page_Navigation_App.DataAccess
             }
         }
 
+        public bool UpdateUser(User user)
+        {
+            try
+            {
+                using var connection = new MySqlConnection(Constr);
+                connection.Open();
+
+                if (string.IsNullOrEmpty(user.Password))
+                {
+                    string sql = "UPDATE users SET name = @Name WHERE id = @Id";
+                    connection.Execute(sql, new
+                    {
+                        user.Name,
+                        user.Id
+                    });
+                }
+                else
+                {
+                    string hashedPassword = Convert.ToBase64String(KeyDerivation.Pbkdf2(
+                     password: user.Password,
+                     salt: GetStoredSalt(),
+                     prf: KeyDerivationPrf.HMACSHA256,
+                     iterationCount: 10000,
+                     numBytesRequested: 256 / 8));
+                    string sql = "UPDATE users SET name = @Name, password= @Password WHERE id = @Id";
+                    connection.Execute(sql, new
+                    {
+                        user.Name,
+                        user.Id,
+                        Password = hashedPassword
+                    });
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public bool Register(User user)
         {
             try
@@ -199,6 +239,42 @@ namespace Page_Navigation_App.DataAccess
             }
         }
 
+
+        public Statistic GetInfoDashboard(int userId)
+        {
+            try
+            {
+                using var connection = new MySqlConnection(Constr);
+                connection.Open();
+                int vocabCount = connection.ExecuteScalar<int>("SELECT COUNT(*) as Num FROM vocabularies WHERE user_id = @userId", new { userId });
+                var result = connection.QueryFirstOrDefault<(int score, int question)>(
+                    "SELECT SUM(score) as score, SUM(question) as question FROM quizz_achievements WHERE user_id = @userId",
+                    new { userId }
+                );
+                int scoreCount = result.score;
+                int questionCount = result.question;
+                var s = connection.Query<ChartElement>("SELECT SUM(score) as score, SUM(question) as question, DATE(time) as date FROM quizz_achievements WHERE user_id= @userId GROUP BY DATE(time)", new
+                {
+                    userId
+                });
+                return new Statistic
+                {
+                    VocabCount = vocabCount,
+                    ScoreCount = scoreCount,
+                    QuestionCount = questionCount,
+                    ChartElements = s.ToList()
+                };
+            }
+            catch
+            {
+                return new Statistic
+                {
+                    VocabCount = 0,
+                    ScoreCount = 0,
+                    QuestionCount = 0
+                };
+            }
+        }
         private static byte[] GetStoredSalt()
         {
             // Replace this with your own code to retrieve the stored salt from your database or other storage location
