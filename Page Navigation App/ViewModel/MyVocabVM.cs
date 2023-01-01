@@ -185,7 +185,7 @@ namespace Page_Navigation_App.ViewModel
             var b = new BackgroundWorker();
             b.DoWork += (o, args) =>
             {
-                Vocabs = dataConnector.GetVocabs();
+                Vocabs = dataConnector.GetVocabs(StaticData.Instance.User.Id);
             };
             b.RunWorkerCompleted += (o, args) =>
             {

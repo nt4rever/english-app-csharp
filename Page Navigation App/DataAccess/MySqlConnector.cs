@@ -38,6 +38,7 @@ namespace Page_Navigation_App.DataAccess
                 var user = connection.QuerySingleOrDefault<User>(
                     "SELECT * FROM users WHERE email = @Email",
                     new { Email = email });
+                if (user == null) return null;
                 bool isValid = user.Password == Convert.ToBase64String(KeyDerivation.Pbkdf2(
                         password: password,
                         salt: GetStoredSalt(),
@@ -112,13 +113,16 @@ namespace Page_Navigation_App.DataAccess
             }
         }
 
-        public List<Vocab> GetVocabs()
+        public List<Vocab> GetVocabs(int userId)
         {
             try
             {
                 using var connection = new MySqlConnection(Constr);
                 connection.Open();
-                var vocab = connection.Query<Vocab>("SELECT * FROM vocabularies ORDER BY id DESC");
+                var vocab = connection.Query<Vocab>("SELECT * FROM vocabularies WHERE user_id = @userId ORDER BY id DESC", new
+                {
+                    userId
+                });
                 return vocab.ToList();
             }
             catch
@@ -179,14 +183,14 @@ namespace Page_Navigation_App.DataAccess
             }
         }
 
-        public List<Vocab> GetVocabsForLearn(int num)
+        public List<Vocab> GetVocabsForLearn(int num, int userId)
         {
             try
             {
                 using var connection = new MySqlConnection(Constr);
                 connection.Open();
-                var vocab = connection.Query<Vocab>("SELECT * FROM vocabularies ORDER BY RAND() LIMIT @Num"
-                    , new { Num = num });
+                var vocab = connection.Query<Vocab>("SELECT * FROM vocabularies WHERE user_id = @userId ORDER BY RAND() LIMIT @Num"
+                    , new { Num = num, userId });
                 return vocab.ToList();
             }
             catch

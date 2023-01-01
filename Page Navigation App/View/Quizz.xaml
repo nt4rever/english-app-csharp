@@ -33,16 +33,13 @@
                       FontSize="14"
                       FontFamily="/Fonts/#Rubik Regular"
                       Visibility="{Binding IsButtonLoad}" />
-            <ProgressBar IsIndeterminate="{Binding IsLoading}"
-                         Visibility="{Binding IsButtonLoad}"
-                         Margin="146,188,146,188" />
             <Button Content="Start Quizz"
                     Visibility="{Binding IsButtonLoad}"
                     Margin="146,153,146,195"
                     Command="{Binding RefreshCommand}" />
             <StackPanel Margin="0,0,10,0"
                         Visibility="{Binding IsQuizz}">
-                <TextBlock Text="{Binding CurrentQuestion.Text}"
+                <TextBlock Text="{Binding CurrentQuizz.Text}"
                            Foreground="#fff"
                            FontSize="18"
                            HorizontalAlignment="Center"
@@ -75,7 +72,7 @@
         </Grid>
 
 
-        <Grid Margin="136,415,127,84">
+        <Grid Margin="136,415,127,109">
             <Popup x:Name="myPopup"
                    Placement="Center"
                    AllowsTransparency="True"
@@ -88,14 +85,7 @@
                         <TextBlock Text="{Binding TextPopup}"
                                    FontSize="20"
                                    Foreground="{Binding ColorPopup}"
-                                   Margin="0,0,0,15" />
-                        <Button Content="Close"
-                                Width="50"
-                                Height="25"
-                                FontSize="12"
-                                Padding="0"
-                                Command="{Binding ClosePopupCommand}" />
-
+                                   Margin="0,0,0,5" />
                     </StackPanel>
                 </Border>
             </Popup>

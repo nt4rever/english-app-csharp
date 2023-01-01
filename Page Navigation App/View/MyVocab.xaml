@@ -36,7 +36,7 @@
 
                 <DataGrid.Columns>
                     <DataGridTemplateColumn Header="Name"
-                                            Width="100">
+                                            Width="120">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Name}"

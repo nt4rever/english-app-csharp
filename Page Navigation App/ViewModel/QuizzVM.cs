@@ -13,16 +13,29 @@ namespace Page_Navigation_App.ViewModel
     class QuizzVM : ViewModelBase
     {
         readonly MySqlConnector dataConnector;
-        private QuizQuestion[] _questions = {
-            new QuizQuestion
+        private List<QuizQuestion> _quizzes;
+        private int _currentQuizzIndex = -1;
+        private QuizQuestion _currentQuizz = null;
+        public QuizQuestion CurrentQuizz
+        {
+            get => _currentQuizz;
+            set
             {
-                Text = "The company's ___ policy requires all employees to wear a uniform.",
-                Answers = "A. dress, B. clothing, C. attire, D. garb",
-                CorrectAnswer = 0
-            }};
-        private int _currentQuestionIndex = 0;
-        public QuizQuestion CurrentQuestion => _questions[_currentQuestionIndex];
-        public string[] Answers => CurrentQuestion.Answers.Split(",").Select(x => x.Trim()).ToArray();
+                _currentQuizz = value;
+                OnPropertyChanged();
+            }
+        }
+        private ObservableCollection<string> _answer;
+        public ObservableCollection<string> Answers
+        {
+            get => _answer;
+            set
+            {
+                _answer = value;
+                OnPropertyChanged();
+            }
+        }
+
         private string _selectedAnswer;
         public string SelectedAnswer
         {
@@ -67,17 +80,6 @@ namespace Page_Navigation_App.ViewModel
             }
         }
 
-        private bool _isLoading;
-        public bool IsLoading
-        {
-            get => _isLoading;
-            set
-            {
-                _isLoading = value;
-                OnPropertyChanged();
-            }
-        }
-
         private string _isQuizz = "Hidden";
         public string IsQuizz
         {
@@ -103,7 +105,6 @@ namespace Page_Navigation_App.ViewModel
         public int SelectedOptionKey { get; set; }
         public ICommand NextQuestionCommand { get; set; }
         public ICommand SubmitAnswerCommand { get; set; }
-        public ICommand ClosePopupCommand { get; set; }
         public ICommand RefreshCommand { get; set; }
 
         public QuizzVM()
@@ -111,7 +112,6 @@ namespace Page_Navigation_App.ViewModel
             dataConnector = new MySqlConnector();
             NextQuestionCommand = new RelayCommand(NextQuestion);
             SubmitAnswerCommand = new RelayCommand(SubmitAnswer);
-            ClosePopupCommand = new RelayCommand(ClosePopUp);
             RefreshCommand = new RelayCommand(Refresh);
             Options = new ObservableCollection<KeyValuePair<int, string>>
             {
@@ -124,20 +124,19 @@ namespace Page_Navigation_App.ViewModel
 
         private void Refresh(object obj)
         {
-            IsLoading = true;
             var b = new BackgroundWorker();
             b.DoWork += (o, args) =>
             {
 
                 var a = dataConnector.GetQuizQuestionsAsync(SelectedOptionKey);
-                _questions = a.Result.ToArray();
-
+                _quizzes = a.Result.ToList();
             };
             b.RunWorkerCompleted += (o, args) =>
             {
                 IsQuizz = "Visible";
                 IsButtonLoad = "Hidden";
-                IsLoading = false;
+                _currentQuizzIndex = 0;
+                SetupQuizz();
             };
             b.RunWorkerAsync();
         }
@@ -145,50 +144,58 @@ namespace Page_Navigation_App.ViewModel
         private void NextQuestion(object obj)
         {
             OpenPopup = false;
-            _currentQuestionIndex++;
-            if (_currentQuestionIndex == _questions.Length)
+            _currentQuizzIndex++;
+            if (_currentQuizzIndex != -1 && _currentQuizzIndex < _quizzes.Count)
             {
-                _currentQuestionIndex = 0;
-                TextPopup = $"Your has completed this quizz! {_score}/{_questions.Length}";
+                SetupQuizz();
+            }
+            else if (_currentQuizzIndex == _quizzes.Count)
+            {
+                TextPopup = $"Your has completed this quizz! {_score}/{_quizzes.Count}";
                 InsertAchievement(new QuizzAchievement
                 {
                     Score = _score,
-                    Question = _questions.Length,
+                    Question = _quizzes.Count,
                     UserId = StaticData.Instance.User.Id,
                     Time = DateTime.Now
                 });
                 ColorPopup = "green";
                 OpenPopup = true;
                 _score = 0;
+                IsQuizz = "Hidden";
+                IsButtonLoad = "Visible";
             }
 
-            OnPropertyChanged(nameof(CurrentQuestion));
+            OnPropertyChanged(nameof(CurrentQuizz));
             OnPropertyChanged(nameof(Answers));
             SelectedAnswer = null;
         }
 
         private void SubmitAnswer(object obj)
         {
-            int key = CurrentQuestion.CorrectAnswer;
-            string value = Answers[key];
+            int key = CurrentQuizz.Correct;
+            string value = Answers.ElementAt(key);
             if (SelectedAnswer == value)
             {
                 _score++;
-                TextPopup = "Your answer correct";
+                TextPopup = "Your answer correct 👏";
                 ColorPopup = "green";
                 OpenPopup = true;
             }
             else
             {
-                TextPopup = "Your answer incorrect";
+                TextPopup = $"Oops, {value} is the correct answer";
                 ColorPopup = "red";
                 OpenPopup = true;
             }
         }
 
-        private void ClosePopUp(object obj)
+        private void SetupQuizz()
         {
             OpenPopup = false;
+            TextPopup = "";
+            CurrentQuizz = _quizzes.ElementAt(_currentQuizzIndex);
+            Answers = new ObservableCollection<string>(CurrentQuizz.Answers.Split(",").Select(x => x.Trim()));
         }
 
         private void InsertAchievement(QuizzAchievement achievement)

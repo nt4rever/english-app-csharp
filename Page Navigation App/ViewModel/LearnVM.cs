@@ -54,13 +54,24 @@ namespace Page_Navigation_App.ViewModel
             }
         }
         private string _colorMessage = "#FF0DFF6A";
-        public string ColorMessage { 
+        public string ColorMessage
+        {
             get => _colorMessage;
             set
-                {
-                    _colorMessage = value;
-                    OnPropertyChanged();
-                }
+            {
+                _colorMessage = value;
+                OnPropertyChanged();
+            }
+        }
+        private string _textBox;
+        public string TextBox
+        {
+            get => _textBox;
+            set
+            {
+                _textBox = value;
+                OnPropertyChanged();
+            }
         }
         private Vocab _currentVocab = null;
         private int _currentVocabIndex = -1;
@@ -68,6 +79,7 @@ namespace Page_Navigation_App.ViewModel
         public ICommand NextCommand { get; set; }
         public ICommand CheckCommand { get; set; }
         public ICommand SpellCommand { get; set; }
+        public ICommand AnswerCommand { get; set; }
         public LearnVM()
         {
             NumberOptions = new ObservableCollection<KeyValuePair<int, string>>
@@ -87,6 +99,7 @@ namespace Page_Navigation_App.ViewModel
             NextCommand = new RelayCommand(NextAction, CanNextAction);
             CheckCommand = new RelayCommand(CheckAction, CanCheckAction);
             SpellCommand = new RelayCommand(SpellAction);
+            AnswerCommand = new RelayCommand(DisplayAnswerAction, CanCheckAction);
             googleTranslate = new();
             dataConnector = new();
         }
@@ -96,7 +109,7 @@ namespace Page_Navigation_App.ViewModel
             var b = new BackgroundWorker();
             b.DoWork += (o, args) =>
             {
-                _vocabs = dataConnector.GetVocabsForLearn(SelectedNumberOptionKey);
+                _vocabs = dataConnector.GetVocabsForLearn(SelectedNumberOptionKey, StaticData.Instance.User.Id);
             };
             b.RunWorkerCompleted += (o, args) =>
             {
@@ -145,14 +158,25 @@ namespace Page_Navigation_App.ViewModel
         {
             try
             {
-                if (!string.IsNullOrEmpty(English)) {
+                if (!string.IsNullOrEmpty(English))
+                {
                     googleTranslate.PlayMp3FromUrl("https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=" + Uri.EscapeUriString(English) + "&tl=en&total=1&idx=0");
                 }
-            } catch
+            }
+            catch
             {
 
             }
 
+        }
+
+        private void DisplayAnswerAction(object obj)
+        {
+            if (_currentVocab != null)
+            {
+                string note = string.IsNullOrEmpty(_currentVocab.Note) ? "" : $" Note: {_currentVocab.Note}";
+                TextBox = $"{_currentVocab.Name} ({_currentVocab.Type}) {_currentVocab.Meaning}{note}";
+            }
         }
 
         private void CheckAnswer(string input, string key)
@@ -173,6 +197,7 @@ namespace Page_Navigation_App.ViewModel
         private void SetupVocabTest()
         {
             Message = "";
+            TextBox = "";
             _currentVocab = _vocabs.ElementAt(_currentVocabIndex);
             if (SelectedLangOptionKey == 0)
             {

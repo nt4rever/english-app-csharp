@@ -50,7 +50,7 @@ namespace Page_Navigation_App {
         /// InitializeComponent
         /// </summary>
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "7.0.1.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.10.0")]
         public void InitializeComponent() {
             if (_contentLoaded) {
                 return;
@@ -62,7 +62,7 @@ namespace Page_Navigation_App {
             
             #line default
             #line hidden
-            System.Uri resourceLocater = new System.Uri("/English App;component/app.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/English App;V1.0.0.0;component/app.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\App.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
@@ -76,7 +76,7 @@ namespace Page_Navigation_App {
         /// </summary>
         [System.STAThreadAttribute()]
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "7.0.1.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.10.0")]
         public static void Main() {
             Page_Navigation_App.App app = new Page_Navigation_App.App();
             app.InitializeComponent();

@@ -106,7 +106,7 @@
                 </StackPanel>
 
                 <StackPanel Width="80"
-                            Height="120"
+                            Height="140"
                             Canvas.Top="10"
                             Canvas.Left="190">
                     <TextBlock Text="{Binding Message}"
@@ -118,14 +118,30 @@
                     <Button Content="Check"
                             FontSize="12"
                             Height="25"
-                            Width="70"
+                            Width="75"
                             Margin="0,0,0,7"
                             Command="{Binding CheckCommand}" />
+                    <Button Content="Answer"
+                            FontSize="12"
+                            Width="75"
+                            Height="25"
+                            Margin="0,0,0,7"
+                            Command="{Binding AnswerCommand}" />
                     <Button Content="Next"
                             FontSize="12"
-                            Width="70"
+                            Width="75"
                             Height="25"
                             Command="{Binding NextCommand}" />
+                </StackPanel>
+                <StackPanel Width="250"
+                            Height="50"
+                            Canvas.Bottom="10"
+                            Canvas.Left="120">
+                    <TextBlock Foreground="#fff"
+                               FontSize="16"
+                               TextWrapping="Wrap"
+                               Text="{Binding TextBox}"
+                               TextAlignment="Center" />
                 </StackPanel>
             </Canvas>
             <Grid Grid.Row="1"
