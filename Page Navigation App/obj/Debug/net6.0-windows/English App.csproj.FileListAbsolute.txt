@@ -184,3 +184,8 @@ E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\
 E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\English App.pdb
 E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\English App.genruntimeconfig.cache
 E:\HK1_NAM_4\VS\english-app-csharp\Page Navigation App\obj\Debug\net6.0-windows\ref\English App.dll
+D:\VS\Final\EnglishApp\Page Navigation App\bin\Debug\net6.0-windows\Images\icon_translate.png
+D:\VS\Final\EnglishApp\Page Navigation App\bin\Debug\net6.0-windows\Images\icon_grammar.png
+D:\VS\Final\EnglishApp\Page Navigation App\bin\Debug\net6.0-windows\Images\icon_quizz.png
+D:\VS\Final\EnglishApp\Page Navigation App\bin\Debug\net6.0-windows\Images\icon_vocab.png
+D:\VS\Final\EnglishApp\Page Navigation App\bin\Debug\net6.0-windows\Images\icon_learn.png

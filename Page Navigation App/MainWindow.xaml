@@ -77,7 +77,7 @@
 
                         <Grid>
 
-                            <Image Source="Images/img_customer.png"
+                            <Image Source="Images/icon_translate.png"
                                    Style="{StaticResource Image_Style}" />
 
                             <TextBlock Text="Translate"
@@ -94,7 +94,7 @@
 
                         <Grid>
 
-                            <Image Source="Images/img_product.png"
+                            <Image Source="Images/icon_grammar.png"
                                    Style="{StaticResource Image_Style}" />
 
                             <TextBlock Text="Grammar check"
@@ -111,7 +111,7 @@
 
                         <Grid>
 
-                            <Image Source="Images/img_order.png"
+                            <Image Source="Images/icon_quizz.png"
                                    Style="{StaticResource Image_Style}" />
 
                             <TextBlock Text="Quizz"
@@ -126,7 +126,7 @@
 
                         <Grid>
 
-                            <Image Source="Images/img_order.png"
+                            <Image Source="Images/icon_vocab.png"
                                    Style="{StaticResource Image_Style}" />
 
                             <TextBlock Text="My vocab"
@@ -140,7 +140,7 @@
 
                         <Grid>
 
-                            <Image Source="Images/img_order.png"
+                            <Image Source="Images/icon_learn.png"
                                    Style="{StaticResource Image_Style}" />
 
                             <TextBlock Text="Learn vocab"

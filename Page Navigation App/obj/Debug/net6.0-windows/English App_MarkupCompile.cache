@@ -1,7 +1,7 @@
 ﻿English App
 
 
-exe
+winexe
 C#
 .cs
 D:\VS\Final\EnglishApp\Page Navigation App\obj\Debug\net6.0-windows\
@@ -11,7 +11,7 @@ false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\VS\Final\EnglishApp\Page Navigation App\App.xaml
 15-1597916094
-21-301153444
+26-483439434
 33249997408
 226-651120526
 LoginWindow.xaml;MainWindow.xaml;RegisterWindow.xaml;Styles\Button.xaml;Styles\ComboBox.xaml;Styles\Image.xaml;Styles\Page.xaml;Styles\Text.xaml;Utilities\DataTemplate.xaml;View\Grammar.xaml;View\Home.xaml;View\Learn.xaml;View\MyVocab.xaml;View\Quizz.xaml;View\Translate.xaml;

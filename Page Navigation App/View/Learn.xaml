@@ -169,6 +169,10 @@
                         Width="70"
                         Margin="136,35,258,87"
                         Command="{Binding StartCommand}" />
+                <Button Content="{Binding IsPronunciationCheck}"
+                        FontSize="12"
+                        Margin="221,35,91,87"
+                        Command="{Binding PronunciationCommand}" />
             </Grid>
         </Grid>
     </Grid>

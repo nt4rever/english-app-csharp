@@ -29,5 +29,10 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/quizz_page.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/myvocab_page.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/learn_page.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/icon_translate.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/icon_grammar.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/icon_quizz.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/icon_vocab.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/icon_learn.png")]
 
 

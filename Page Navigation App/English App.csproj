@@ -33,6 +33,11 @@
 		<None Remove="Images\quizz_page.png" />
 		<None Remove="Images\myvocab_page.png" />
 		<None Remove="Images\learn_page.png" />
+		<None Remove="Images\icon_translate.png" />
+		<None Remove="Images\icon_grammar.png" />
+		<None Remove="Images\icon_quizz.png" />
+		<None Remove="Images\icon_vocab.png" />
+		<None Remove="Images\icon_learn.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -103,6 +108,21 @@
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
 		<Content Include="Images\learn_page.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Images\icon_translate.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Images\icon_grammar.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Images\icon_quizz.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Images\icon_vocab.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Images\icon_learn.png">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
 	</ItemGroup>
