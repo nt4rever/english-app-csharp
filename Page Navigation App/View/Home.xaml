@@ -58,6 +58,20 @@
                             Command="{Binding EditCommand}" />
                 </Grid>
 
+                <DockPanel Margin="333,44,68,224">
+                    <DatePicker Foreground="#fff"
+                                Width="80"
+                                Text="{Binding StartDate, Mode=TwoWay}" />
+                    <DatePicker Foreground="#fff"
+                                Width="80"
+                                Text="{Binding EndDate, Mode=TwoWay}"
+                                Margin="3,0,3,0" />
+                    <Button Width="50"
+                            Content="🔍"
+                            FontSize="14"
+                            Command="{Binding SearchCommand}" />
+                </DockPanel>
+
             </Grid>
             <Grid Grid.Row="1"
                   Margin="67,10,70,46">

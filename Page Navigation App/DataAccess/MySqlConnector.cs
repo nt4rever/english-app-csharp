@@ -15,6 +15,7 @@ namespace Page_Navigation_App.DataAccess
     public class MySqlConnector
     {
         private readonly string Constr = "Server=159.223.86.230;Database=english;Uid=english;Pwd=3ZsmHN8AjDYSjB3Y;";
+        //private readonly string Constr = "Server=localhost;Database=english;Uid=root;Pwd=;";
         public async Task<IEnumerable<QuizQuestion>> GetQuizQuestionsAsync(int num = 5)
         {
             try
@@ -240,7 +241,7 @@ namespace Page_Navigation_App.DataAccess
         }
 
 
-        public Statistic GetInfoDashboard(int userId)
+        public Statistic GetInfoDashboard(int userId, DateTime startDate, DateTime endDate)
         {
             try
             {
@@ -253,9 +254,11 @@ namespace Page_Navigation_App.DataAccess
                 );
                 int scoreCount = result.score;
                 int questionCount = result.question;
-                var s = connection.Query<ChartElement>("SELECT SUM(score) as score, SUM(question) as question, DATE(time) as date FROM quizz_achievements WHERE user_id= @userId GROUP BY DATE(time)", new
+                var s = connection.Query<ChartElement>("SELECT SUM(score) as score, SUM(question) as question, DATE(time) as date FROM quizz_achievements WHERE user_id = @userId AND time BETWEEN @startDate AND @endDate GROUP BY DATE(time)", new
                 {
-                    userId
+                    userId,
+                    startDate = startDate,
+                    endDate = endDate.AddHours(23).AddMinutes(59).AddSeconds(59).AddSeconds(59)
                 });
                 return new Statistic
                 {
@@ -265,8 +268,9 @@ namespace Page_Navigation_App.DataAccess
                     ChartElements = s.ToList()
                 };
             }
-            catch
+            catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return new Statistic
                 {
                     VocabCount = 0,

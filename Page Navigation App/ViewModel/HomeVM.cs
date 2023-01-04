@@ -72,6 +72,27 @@ namespace Page_Navigation_App.ViewModel
                 OnPropertyChanged();
             }
         }
+
+        private DateTime _startDate = DateTime.Now.AddDays(-30);
+        public DateTime StartDate
+        {
+            get => _startDate;
+            set
+            {
+                _startDate = value;
+                OnPropertyChanged();
+            }
+        }
+        private DateTime _endDate = DateTime.Now;
+        public DateTime EndDate
+        {
+            get => _endDate;
+            set
+            {
+                _endDate = value;
+                OnPropertyChanged();
+            }
+        }
         private List<ISeries> series;
         public List<ISeries> Series
         {
@@ -114,15 +135,15 @@ namespace Page_Navigation_App.ViewModel
             new SolidColorPaint(new SKColor(240, 240, 240));
 
         public ICommand EditCommand { get; set; }
-
+        public ICommand SearchCommand { get; set; }
         public HomeVM()
         {
             Name = StaticData.Instance.User.Name;
             Email = StaticData.Instance.User.Email;
             EditCommand = new RelayCommand(EditAction, CanEdit);
+            SearchCommand = new RelayCommand(SearchAction);
             dataConnector = new();
             LoadData();
-
         }
 
         private bool CanEdit(object obj)
@@ -154,13 +175,19 @@ namespace Page_Navigation_App.ViewModel
             b.RunWorkerAsync();
         }
 
+        private void SearchAction(object obj)
+        {
+            Console.WriteLine($"{StartDate} {EndDate}");
+            LoadData();
+        }
+
         private void LoadData()
         {
             var b = new BackgroundWorker();
             Statistic statistic = null;
             b.DoWork += (o, args) =>
             {
-                statistic = dataConnector.GetInfoDashboard(StaticData.Instance.User.Id);
+                statistic = dataConnector.GetInfoDashboard(StaticData.Instance.User.Id, StartDate, EndDate);
             };
             b.RunWorkerCompleted += (o, args) =>
             {
