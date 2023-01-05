@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 02, 2023 at 10:41 PM
+-- Generation Time: Jan 05, 2023 at 10:18 AM
 -- Server version: 8.0.24
 -- PHP Version: 8.0.20
 
@@ -59,7 +59,14 @@ INSERT INTO `quizz_achievements` (`id`, `score`, `question`, `time`, `user_id`) 
 (18, 3, 5, '2023-01-01 16:37:37', 7),
 (19, 5, 5, '2023-01-02 01:59:10', 5),
 (20, 9, 10, '2023-01-02 02:00:35', 6),
-(21, 5, 5, '2023-01-02 03:05:15', 5);
+(21, 5, 5, '2023-01-02 03:05:15', 5),
+(22, 8, 10, '2023-01-03 10:25:23', 5),
+(23, 5, 5, '2023-01-03 10:27:03', 6),
+(24, 3, 5, '2023-01-04 05:37:26', 6),
+(25, 2, 5, '2023-01-04 09:47:59', 5),
+(28, 4, 5, '2023-01-04 12:42:49', 8),
+(29, 3, 5, '2023-01-04 13:42:48', 10),
+(30, 4, 5, '2023-01-05 01:52:47', 5);
 
 -- --------------------------------------------------------
 
@@ -134,8 +141,10 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
 (5, 'Tai', 'tai@gmail.com', 'vVb6JpLI1qj/gpQkFWCNbJDABSEev4XW8/T0t+zq570='),
-(6, 'Tan', 'tan@gmail.com', 'vVb6JpLI1qj/gpQkFWCNbJDABSEev4XW8/T0t+zq570='),
-(7, 'Test', 'test@gmail.com', 'vVb6JpLI1qj/gpQkFWCNbJDABSEev4XW8/T0t+zq570=');
+(6, 'TanR', 'tan@gmail.com', 'vVb6JpLI1qj/gpQkFWCNbJDABSEev4XW8/T0t+zq570='),
+(7, 'Test', 'test@gmail.com', 'vVb6JpLI1qj/gpQkFWCNbJDABSEev4XW8/T0t+zq570='),
+(8, 'Ly', 'ly@gmail.com', 'vVb6JpLI1qj/gpQkFWCNbJDABSEev4XW8/T0t+zq570='),
+(10, 'Test1', 'test1@gmail.com', 'vVb6JpLI1qj/gpQkFWCNbJDABSEev4XW8/T0t+zq570=');
 
 -- --------------------------------------------------------
 
@@ -177,7 +186,7 @@ INSERT INTO `vocabularies` (`id`, `user_id`, `name`, `type`, `meaning`, `note`) 
 (22, 5, 'backslide', 'v', 'Tái phạm', ''),
 (23, 5, 'befall', 'v', 'xảy đến', ''),
 (24, 5, 'Wage', 'n', 'Tiền lương', ''),
-(25, 5, 'Cement', 'n', 'Xi măng', ''),
+(25, 5, 'Cement', 'n', 'xi măng', ''),
 (26, 5, 'Shopping', 'v', 'Mua sắm', ''),
 (27, 5, 'Shipping', 'v', 'Vận chuyển', ''),
 (28, 5, 'promise', 'v', 'hứa', ''),
@@ -193,7 +202,11 @@ INSERT INTO `vocabularies` (`id`, `user_id`, `name`, `type`, `meaning`, `note`) 
 (38, 6, 'routinely', 'adv', 'thường xuyên', ''),
 (39, 6, 'talented', 'adj', 'có tài', ''),
 (40, 6, 'acclaimed', 'adj', 'được khen ngợi', ''),
-(41, 6, 'anecdote', 'n', 'giai thoại', '');
+(41, 6, 'anecdote', 'n', 'giai thoại', '/ˈanəkˌdōt/'),
+(42, 8, 'table', 'n', 'cai ban', '/ˈteɪ.bəl/'),
+(43, 8, 'dictionary', 'n', 'từ điển', 'cuon tu dien'),
+(44, 5, 'book', 'v', 'dat', ''),
+(45, 5, 'book', 'n', 'sách', '');
 
 --
 -- Indexes for dumped tables
@@ -234,7 +247,7 @@ ALTER TABLE `vocabularies`
 -- AUTO_INCREMENT for table `quizz_achievements`
 --
 ALTER TABLE `quizz_achievements`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `quiz_questions`
@@ -246,13 +259,13 @@ ALTER TABLE `quiz_questions`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `vocabularies`
 --
 ALTER TABLE `vocabularies`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- Constraints for dumped tables

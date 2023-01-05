@@ -14,8 +14,8 @@ namespace Page_Navigation_App.DataAccess
 {
     public class MySqlConnector
     {
-        private readonly string Constr = "Server=159.223.86.230;Database=english;Uid=english;Pwd=3ZsmHN8AjDYSjB3Y;";
-        //private readonly string Constr = "Server=localhost;Database=english;Uid=root;Pwd=;";
+        //private readonly string Constr = "Server=159.223.86.230;Database=english;Uid=english;Pwd=;";
+        private readonly string Constr = "Server=localhost;Database=english;Uid=root;Pwd=;";
         public async Task<IEnumerable<QuizQuestion>> GetQuizQuestionsAsync(int num = 5)
         {
             try

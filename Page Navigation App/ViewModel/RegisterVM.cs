@@ -83,9 +83,9 @@ namespace Page_Navigation_App.ViewModel
             {
                 if (res)
                 {
-                    StaticData.Instance.User = new DataAccess.Model.User() { Name = Name, Email = Email, Password = Password };
-                    var mainWindow = new MainWindow();
-                    mainWindow.Show();
+                    //StaticData.Instance.User = new DataAccess.Model.User() { Name = Name, Email = Email, Password = Password };
+                    var loginWindow = new LoginWindow();
+                    loginWindow.Show();
                     var window = Application.Current.Windows
                         .OfType<Window>()
                         .SingleOrDefault(x => x.DataContext == this);

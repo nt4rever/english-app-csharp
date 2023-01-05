@@ -102,6 +102,7 @@ namespace Page_Navigation_App.ViewModel
                 new KeyValuePair<int, string>(5, "5 vocab"),
                 new KeyValuePair<int, string>(10, "10 vocab"),
                 new KeyValuePair<int, string>(20, "20 vocab")
+
             };
             SelectedNumberOptionKey = 5;
             LangOptions = new ObservableCollection<KeyValuePair<int, string>>

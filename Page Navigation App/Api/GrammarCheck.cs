@@ -19,10 +19,10 @@ namespace Page_Navigation_App.Api
                 RequestUri = new Uri("https://dnaber-languagetool.p.rapidapi.com/v2/check"),
                 Headers =
             {
-                { "X-RapidAPI-Key", "c62352020emsh4cabfd3f3f1a08fp1ea9e5jsnc37a16335185" },
+                { "X-RapidAPI-Key", "" },//PLEASE_GET_KEY_IN_RAPID_API
                 { "X-RapidAPI-Host", "dnaber-languagetool.p.rapidapi.com" },
             },
-                        Content = new FormUrlEncodedContent(new Dictionary<string, string>
+                Content = new FormUrlEncodedContent(new Dictionary<string, string>
             {
                 { "language", "en-US" },
                 { "text", text },
